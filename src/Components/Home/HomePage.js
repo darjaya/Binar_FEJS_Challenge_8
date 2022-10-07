@@ -11,7 +11,6 @@ const HomePage = () => (
       <Genres />
       <ListMovie />
     </div>
-    <div></div>
     <div>
       <SliderMovie />
     </div>

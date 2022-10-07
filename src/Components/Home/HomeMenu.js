@@ -1,5 +1,4 @@
 import React from "react";
-// import MenuBar from "../Menu/MenuHome";
 import SliderHome from "../Menu/SliderHome";
 import SliderMovie from "../Movie/SliderMovie";
 
