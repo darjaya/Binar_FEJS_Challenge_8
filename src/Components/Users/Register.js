@@ -155,7 +155,7 @@ const Register = ({ token, setToken }) => {
                     }}
                     variant="contained"
                     size="small"
-                    disabled={!email || password}
+                    disabled={!email || !password}
                     onClick={handleSubmit}
                   >
                     Register Now
