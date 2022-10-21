@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Tooltip } from "antd";
 import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 import RendersMovie from "../Movie/RendersMovie";
 import Slider from "react-slick";
 
@@ -29,11 +28,10 @@ function SearchMovie() {
   }, [searchKey]);
 
   const settings = {
+    className: "center",
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
+    slidesToShow: 2,
+    swipeToSlide: true,
     beforeChange: function (currentSlide, nextSlide) {
       console.log("before change", currentSlide, nextSlide);
     },
@@ -58,7 +56,7 @@ function SearchMovie() {
           />
           <Tooltip title="Search">
             <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
-              <SearchIcon color="primary" onClick={searchKey} />
+              <SearchIcon color="primary" onClick={search} />
             </IconButton>
           </Tooltip>
         </form>

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Row } from "react-bootstrap";
-import MenuPage from "../Menu/MenuPage";
-import { Paper } from "@mui/material";
-import { Tooltip } from "antd";
+import { Paper, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
-import Genres from "../Core/Genres";
+import Genres from "../Movie/Genres";
 
-function TrendingMovie(props) {
+function TrendingMovie() {
   const getPoster = (posterpath) => {
     return `https://www.themoviedb.org/t/p/w440_and_h660_face${posterpath}`;
   };
@@ -26,9 +24,8 @@ function TrendingMovie(props) {
   }, []);
 
   return (
-    <div className="web-movie-app">
+    <div>
       <div>
-        <MenuPage />
         <Genres />
       </div>
       <div>

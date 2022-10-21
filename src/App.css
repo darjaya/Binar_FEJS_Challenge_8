@@ -21,17 +21,6 @@ body {
   border: 1px solid gray;
 }
 
-.menubar {
-  flex-direction: column;
-  height: 80px;
-  background: rgba(0, 0, 0, 0);
-  border-radius: 0px;
-  box-sizing: border-box;
-  justify-content: center;
-  text-align: center;
-  margin-top: 30px;
-}
-
 .users {
   text-align: end;
   margin-top: 5px;
@@ -43,12 +32,13 @@ body {
 .menupage {
   flex-direction: column;
   height: 90px;
-  background: #00008b;
+  /* background: #00008b; */
   border-radius: 0px;
   box-sizing: border-box;
   justify-content: center;
   text-align: center;
-  margin-top: 15px;
+  background: rgba(0, 0, 0, 0);
+  position: top;
 }
 
 .logopage {
@@ -57,20 +47,12 @@ body {
   font-weight: bold;
   text-align: start;
   margin-left: 30px;
-}
-
-.account {
-  text-align: end;
-  margin-top: 5px;
-  margin-right: 0px;
-  justify-content: end;
-  border-radius: 20px;
-  color: #dc143c;
+  margin-top: 15px;
 }
 
 .inputSearch {
   justify-content: center;
-  width: 700px;
+  width: 800px;
   background: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
@@ -79,13 +61,9 @@ body {
   color: #dc143c;
 }
 
-.slick-prev {
-  display: none;
-}
-
 .formSearchPage {
   justify-content: center;
-  width: 800px;
+  width: 900px;
   height: 45px;
   margin-top: 5px;
   border: 3px solid #dc143c;
@@ -94,6 +72,7 @@ body {
   text-color: #dc143c;
   text-align: center;
   margin: 4px auto;
+  margin-top: 25px;
 }
 
 .detilSearchPage {

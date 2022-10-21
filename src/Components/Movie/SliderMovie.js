@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
-import { Col, Tooltip } from "antd";
-import { Paper } from "@mui/material";
-import { Row } from "react-bootstrap";
+import { Paper, Tooltip } from "@mui/material";
+import { Col, Row } from "react-bootstrap";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { Link } from "react-router-dom";
 
@@ -92,7 +91,7 @@ const SliderMovie = () => {
             {trending.map((movie) => {
               console.log(movie.title);
               return (
-                <Tooltip title={movie.title || movie.original_name}>
+                <Tooltip size="medium" title={movie.title || movie.original_name}>
                   <Link to={`/details/${movie.id}${movie.title || movie.original_name}`}>
                     <img src={getPoster(movie.poster_path)} alt="name" style={{ margin: 20, width: 130, height: 180, borderRadius: 5, cursor: "pointer" }} />
                   </Link>

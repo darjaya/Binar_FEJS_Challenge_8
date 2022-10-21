@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
-import { Button } from "antd";
+import { Button } from "@mui/material";
 
 export default function Genres() {
   const [genreMovie, setGenreMovie] = useState([]);
@@ -20,17 +20,17 @@ export default function Genres() {
   const settings = {
     className: "center",
     infinite: true,
-    slidesToShow: 8,
+    slidesToShow: 7,
     swipeToSlide: true,
   };
 
   return (
-    <div style={{ marginBottom: 30 }}>
+    <div>
       <Slider {...settings}>
         {genreMovie.map((movie) => {
           return (
-            <Button style={{ height: 50 }}>
-              <h4 style={{ textAlign: "center", cursor: "pointer" }}> {movie.name}</h4>
+            <Button style={{ height: 20, width: 100 }}>
+              <h5 style={{ textAlign: "center", cursor: "pointer", border: "1px solid gray", marginTop: 5 }}> {movie.name}</h5>
             </Button>
           );
         })}
