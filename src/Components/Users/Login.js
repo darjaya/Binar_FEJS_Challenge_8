@@ -118,7 +118,7 @@ const Login = ({ token, setToken }) => {
                     variant="contained"
                     size="small"
                     onClick={handleSubmit}
-                    disabled={!email || password}
+                    disabled={!email || !password}
                   >
                     Log In
                   </Button>
