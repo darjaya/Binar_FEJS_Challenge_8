@@ -84,7 +84,7 @@ export default function Details(movie) {
           <Col md={3}>
             <img src={getPoster(detailMovie.poster_path)} alt="name" style={{ marginLeft: 15, marginTop: 15, width: 400, height: 600, borderRadius: 5, cursor: "pointer" }} />
           </Col>
-          <Col>
+          <Col style={{ color: "white" }}>
             <h1 style={{ margin: 15, fontWeight: "bold" }}>{detailMovie.title || detailMovie.name} </h1>
             <p style={{ margin: 15 }}>
               {detailMovie.status}
