@@ -3,7 +3,7 @@ import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, Tooltip } from "@mui/material";
 import RendersMovie from "../Movie/RendersMovie";
-import Slider from "react-slick";
+import { Row } from "react-bootstrap";
 
 function SearchMovie() {
   const [search, setSearch] = useState([]);
@@ -27,19 +27,6 @@ function SearchMovie() {
     searchMovies();
   }, [searchKey]);
 
-  const settings = {
-    className: "center",
-    infinite: true,
-    slidesToShow: 2,
-    swipeToSlide: true,
-    beforeChange: function (currentSlide, nextSlide) {
-      console.log("before change", currentSlide, nextSlide);
-    },
-    afterChange: function (currentSlide) {
-      console.log("after change", currentSlide);
-    },
-  };
-
   return (
     <div>
       <div>
@@ -62,12 +49,12 @@ function SearchMovie() {
         </form>
       </div>
       <div>
-        <Slider {...settings}>
+        <Row md={2}>
           {search.length > 1 &&
             search.map((movie, index) => {
               return <RendersMovie key={movie.id} movie={movie} />;
             })}
-        </Slider>
+        </Row>
       </div>
     </div>
   );

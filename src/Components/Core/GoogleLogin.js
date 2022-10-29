@@ -27,20 +27,19 @@ function GoogleLogin({ setToken, label }) {
 
   return (
     <div>
-      <div className="m-auto">
-        <Button
-          sx={{
-            mt: 5,
-            width: "70ch",
-            borderRadius: "20px",
-          }}
-          variant="contained"
-          size="medium"
-          onClick={googleLogin}
-        >
-          <GoogleIcon style={{ m: 15 }} /> {label}
-        </Button>
-      </div>
+      <Button
+        sx={{
+          mt: 5,
+          width: "80ch",
+          borderRadius: "5px",
+          // display: "flex",
+        }}
+        variant="contained"
+        size="large"
+        onClick={googleLogin}
+      >
+        <GoogleIcon style={{ m: 15, marginRight: "5px" }} /> {label}
+      </Button>
     </div>
   );
 }

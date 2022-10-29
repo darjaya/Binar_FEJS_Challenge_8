@@ -9,17 +9,17 @@ const RendersMovie = ({ movie }) => {
   };
 
   return (
-    <div className="detilSearchPage" style={{ marginTop: 100, justifyContent: "center", height: 200 }}>
+    <div className="detilSearchPage" style={{ marginTop: 10, justifyContent: "center", height: 200 }}>
       <Paper elevation={2} style={{ marginTop: 150, margin: 5, marginLeft: 25, width: 460, height: 170, justifyContent: "center", textAlign: "start", border: "1px solid gray" }}>
         <Row style={{ marginTop: 10 }}>
           <Col md={3}>
             <Link to={`/details/${movie.id}${movie.title || movie.original_name}`}>
               <img src={getPoster(movie.poster_path)} alt="name" style={{ marginLeft: 15, width: 100, height: 150, borderRadius: 5, cursor: "pointer" }} />
-            </Link>{" "}
+            </Link>
           </Col>
           <Col>
-            <h3 style={{ margin: 20, fontWeight: "bold" }}>{movie.title} </h3>
-            <p style={{ margin: 20, fontWeight: "bold" }}>Realease: {movie.release_date}</p>
+            <p style={{ marginLeft: 45, margin: 20, fontWeight: "bold" }}>{movie.title} </p>
+            <p style={{ marginLeft: 45, margin: 20, fontWeight: "bold" }}>{movie.release_date}</p>
           </Col>
         </Row>
       </Paper>

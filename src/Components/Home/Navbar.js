@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
-import SearchMovie from "../Core/SearchMovie";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import axios from "axios";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import SettingsIcon from "@mui/icons-material/Settings";
-import { Tooltip, Button, Menu, MenuItem } from "@mui/material";
-import LogoutIcon from "@mui/icons-material/Logout";
+import { Button, Modal, Backdrop, Fade, Box } from "@mui/material";
+
+import SearchMovie from "../Core/SearchMovie";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -15,17 +13,6 @@ const StyledLink = styled(Link)`
 
 function NavbarMenu({ token, setToken }) {
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   useEffect(() => {
     (async () => {
@@ -53,27 +40,66 @@ function NavbarMenu({ token, setToken }) {
     localStorage.removeItem("token");
     setToken(null);
   };
+
+  const style = {
+    position: "absolute",
+    top: "6%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "700px",
+    height: "90px",
+    background: "rgba(0, 0, 0, 0)",
+    borderRadius: 1,
+  };
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
+
   return (
-    <div className="menupage">
+    <header className="menupage">
       <Grid container spacing={2} className="gridbar">
-        <Grid item xs={3}>
+        <Grid item xs={6}>
           <StyledLink to="/">
             <h1 className="logopage">Movielist</h1>
           </StyledLink>
         </Grid>
-        <Grid item xs={6}>
-          <SearchMovie />
+        <Grid>
+          <StyledLink to="/moviepop">
+            <h1 className="logopage">Populars</h1>
+          </StyledLink>
+        </Grid>
+        <Grid item xs={3} sx={{ textAlign: "right", marginTop: "20px" }}>
+          <Button variant="contained" onClick={handleOpenModal} sx={{ borderRadius: 1, border: "2px solid #dc143c", marginRight: "10px" }}>
+            Search
+          </Button>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            open={openModal}
+            id="slide1"
+            onClose={handleCloseModal}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={openModal}>
+              <Box sx={style} id="slide1">
+                <SearchMovie />
+              </Box>
+            </Fade>
+          </Modal>
         </Grid>
         {!token ? (
           <>
-            <Grid item xs={3}>
+            <Grid sx={{ marginTop: "15px" }}>
               <StyledLink to="login">
-                <Button variant="outlined" sx={{ borderRadius: 20, border: "2px solid", marginTop: "25px", marginRight: "15px" }}>
+                <Button variant="contained" sx={{ borderRadius: 1, border: "2px solid #dc143c", marginTop: "20px", marginRight: "10px" }}>
                   Log In
                 </Button>
               </StyledLink>
               <StyledLink to="register">
-                <Button variant="contained" sx={{ borderRadius: 20, marginTop: "25px" }}>
+                <Button variant="contained" sx={{ borderRadius: 1, border: "2px solid #dc143c", marginTop: "20px" }}>
                   Register
                 </Button>
               </StyledLink>
@@ -81,45 +107,15 @@ function NavbarMenu({ token, setToken }) {
           </>
         ) : (
           <>
-            <Grid item xs={3} sx={{ marginTop: "25px" }}>
-              <Tooltip title="Account">
-                <Button style={{ color: "#dc143c", fontFamily: "roboto" }} id="basic-button" aria-controls={open ? "basic-menu" : undefined} aria-haspopup="true" aria-expanded={open ? "true" : undefined} onClick={handleClick}>
-                  <strong>
-                    <AccountCircleRoundedIcon fontSize="large" style={{ color: "#DC143C", fontWeight: "bold" }} />
-                  </strong>
-                </Button>
-              </Tooltip>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
-              >
-                <MenuItem onClick={handleClose}>
-                  <AccountCircleRoundedIcon style={{ color: "#DC143C", fontSize: "large" }} />
-                  {"Profile"}
-                </MenuItem>
-              </Menu>
-              <Tooltip title="Settings">
-                <Button style={{ color: "#dc143c", fontFamily: "roboto" }}>
-                  <strong>
-                    <SettingsIcon fontSize="large" style={{ color: "#DC143C", fontWeight: "bold" }} />
-                  </strong>
-                </Button>
-              </Tooltip>
-              <Tooltip title="Log Out">
-                <Button style={{ color: "#dc143c", fontFamily: "roboto" }}>
-                  <LogoutIcon fontSize="large" style={{ color: "#DC143C", fontWeight: "bold" }} onClick={handleLogout} />
-                </Button>
-              </Tooltip>
+            <Grid item sx={{ marginTop: "20px" }}>
+              <Button variant="contained" onClick={handleLogout} sx={{ borderRadius: 1, border: "2px solid #dc143c" }}>
+                Log Out
+              </Button>
             </Grid>
           </>
         )}
       </Grid>
-    </div>
+    </header>
   );
 }
 

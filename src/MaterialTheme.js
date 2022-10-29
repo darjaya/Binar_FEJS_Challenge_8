@@ -3,14 +3,20 @@ import { createTheme } from "@mui/material/styles";
 const Theme = createTheme({
   palette: {
     primary: {
-      light: "#757ce8",
-      main: "#dc143c",
-      dark: "#002884",
+      light: "#4f83cc",
+      main: "#01579b",
+      dark: "#002f6c",
       contrastText: "#fff",
     },
-    merah: {
+    secondary: {
+      light: "#9fffe0",
+      main: "#69f0ae",
+      dark: "#2bbd7e",
+      contrastText: "#000",
+    },
+    maroon: {
       light: "#ff7961",
-      main: "#FF0000",
+      main: "#dc143c",
       dark: "#ba000d",
       contrastText: "#000",
     },
@@ -20,13 +26,13 @@ const Theme = createTheme({
       dark: "#ba000d",
       contrastText: "#000",
     },
-    hijau: {
+    green: {
       light: "#ff7961",
       main: "#2E8B57",
       dark: "#ba000d",
       contrastText: "#000",
     },
-    putih: {
+    white: {
       light: "#ff7961",
       main: "	#F0FFFF",
       dark: "#ba000d",

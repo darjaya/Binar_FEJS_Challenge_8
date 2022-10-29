@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import axios from "axios";
 import GoogleLogin from "../Core/GoogleLogin";
 import Box from "@mui/material/Box";
@@ -70,12 +70,11 @@ const Login = ({ token, setToken }) => {
             <Card elevation={3} sx={{ minWidth: 275 }}>
               <CardContent>
                 <h2> Log In to Your Account</h2>
-                <GoogleLogin setToken={setToken} label="Login with Google" />
-                <h5 style={{ marginTop: 25 }}> Or</h5>
+
                 <Form onSubmit={handleSubmit}>
-                  <Box sx={{ "& > :not(style)": { mt: 2, width: "70ch", border: "white", borderRadius: "20px" } }}>
+                  <Box sx={{ "& > :not(style)": { mt: 2, minWidth: "390px", border: "white", borderRadius: "20px", display: "flex" } }}>
                     <TextField
-                      sx={{ border: "2px solid red", borderRadius: "20px" }}
+                      sx={{ border: "2px solid red", borderRadius: "20px", display: "flex" }}
                       id="input-with-icon-textfield"
                       label="Email Address"
                       InputProps={{
@@ -112,17 +111,31 @@ const Login = ({ token, setToken }) => {
                   <Button
                     sx={{
                       mt: 5,
-                      width: "40ch",
-                      borderRadius: "20px",
+                      width: "80ch",
+                      borderRadius: "5px",
                     }}
                     variant="contained"
-                    size="small"
+                    size="large"
                     onClick={handleSubmit}
                     disabled={!email || !password}
                   >
                     Log In
                   </Button>
                 </Form>
+
+                <Row style={{ marginTop: 25, justifyContent: "center" }}>
+                  <Col md={5}>
+                    <hr style={{ width: "100%", textAlign: "center" }}></hr>
+                  </Col>
+                  <Col md={1}>
+                    <h5> Or</h5>
+                  </Col>
+                  <Col md={5}>
+                    <hr style={{ width: "100%", textAlign: "center" }}></hr>
+                  </Col>
+                </Row>
+
+                <GoogleLogin setToken={setToken} label="Login with Google" />
                 <p style={{ marginTop: 20, color: "GrayText" }}>
                   Don't have an account?
                   <Link to="/register" style={{ textDecoration: "none", margin: 5 }}>

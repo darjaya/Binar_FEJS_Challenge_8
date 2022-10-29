@@ -5,6 +5,7 @@ import SliderHome from "../Home/SliderHome";
 import Genres from "../Movie/Genres";
 import ListMovie from "../Movie/ListMovie";
 import SliderMovie from "../Movie/SliderMovie";
+import PopularMovie from "../../Pages/Populars";
 
 function Home({ token, setToken }) {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ function Home({ token, setToken }) {
         <>
           <SliderHome />
           <SliderMovie />
+          <PopularMovie />
         </>
       ) : (
         <>
@@ -47,26 +49,23 @@ function Home({ token, setToken }) {
       <footer
         style={{
           textAlign: "center",
-          backgroundColor: "#dc143c",
-          color: "whitesmoke",
-          marginTop: 100,
+          backgroundColor: "#01579b",
+          color: "#01579b",
           fontSize: 20,
           fontWeight: "bold",
           height: 100,
         }}
       >
-        <p
+        <div
           style={{
-            textAlign: "center",
-            backgroundColor: "#dc143c",
             color: "whitesmoke",
-            marginTop: 30,
             fontSize: 20,
             fontWeight: "bold",
+            marginBottom: "100px",
           }}
         >
-          Binar Web Movie ©2022 by Indar Jaya
-        </p>
+          <p>Binar Web Movie ©2022 by Indar Jaya</p>
+        </div>
       </footer>
     </div>
   );
