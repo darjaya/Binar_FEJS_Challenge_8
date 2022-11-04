@@ -145,3 +145,17 @@ body {
   margin-top: 5px;
   font-size: 12px;
 }
+
+.register-form {
+  align-items: center;
+  margin: 4px auto;
+  color: black;
+  background: white;
+  padding: 50px;
+  border-radius: 5px;
+  width: 50%;
+  margin-top: 100px;
+  justify-content: center;
+  text-align: center;
+}
+
