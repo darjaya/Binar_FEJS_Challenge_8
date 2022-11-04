@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PlayCircleOutlined } from "@ant-design/icons";
+import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -67,14 +67,14 @@ const SliderHome = ({ token, setToken }) => {
               marginTop: 5,
               marginLeft: "30px",
               width: "25ch",
-              borderRadius: "20px",
+              borderRadius: "5px",
               fontSize: 15,
             }}
             variant="contained"
-            size="small"
+            size="large"
             onClick={handleOpen}
           >
-            <PlayCircleOutlined style={{ marginRight: "5px" }} />
+            <PlayCircleFilledWhiteIcon style={{ marginRight: "5px" }} />
             WATCH TRAILER
           </Button>
 
@@ -118,14 +118,14 @@ const SliderHome = ({ token, setToken }) => {
               marginTop: 5,
               marginLeft: "30px",
               width: "25ch",
-              borderRadius: "20px",
+              borderRadius: "5px",
               fontSize: 15,
             }}
             variant="contained"
-            size="small"
+            size="large"
             onClick={handleOpen2}
           >
-            <PlayCircleOutlined style={{ marginRight: "5px" }} />
+            <PlayCircleFilledWhiteIcon style={{ marginRight: "5px" }} />
             WATCH TRAILER
           </Button>
 
@@ -172,14 +172,14 @@ const SliderHome = ({ token, setToken }) => {
               marginTop: 5,
               marginLeft: "30px",
               width: "25ch",
-              borderRadius: "20px",
+              borderRadius: "5px",
               fontSize: 15,
             }}
             variant="contained"
-            size="small"
+            size="large"
             onClick={handleOpen3}
           >
-            <PlayCircleOutlined style={{ marginRight: "5px" }} />
+            <PlayCircleFilledWhiteIcon style={{ marginRight: "5px" }} />
             WATCH TRAILER
           </Button>
 
@@ -225,14 +225,14 @@ const SliderHome = ({ token, setToken }) => {
               marginTop: 5,
               marginLeft: "30px",
               width: "25ch",
-              borderRadius: "20px",
+              borderRadius: "5px",
               fontSize: 15,
             }}
             variant="contained"
-            size="small"
+            size="large"
             onClick={handleOpen4}
           >
-            <PlayCircleOutlined style={{ marginRight: "5px" }} />
+            <PlayCircleFilledWhiteIcon style={{ marginRight: "5px" }} />
             WATCH TRAILER
           </Button>
 
@@ -277,14 +277,14 @@ const SliderHome = ({ token, setToken }) => {
               marginTop: 5,
               marginLeft: "30px",
               width: "25ch",
-              borderRadius: "20px",
+              borderRadius: "5px",
               fontSize: 15,
             }}
             variant="contained"
-            size="small"
+            size="large"
             onClick={handleOpen5}
           >
-            <PlayCircleOutlined style={{ marginRight: "5px" }} />
+            <PlayCircleFilledWhiteIcon style={{ marginRight: "5px" }} />
             WATCH TRAILER
           </Button>
 

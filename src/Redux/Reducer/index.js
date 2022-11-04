@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
-import popularReducer from "./popularReducer";
+import { combineReducers } from "@reduxjs/toolkit";
+import Reducer from "./Reducer";
 
 export default combineReducers({
-  popular: popularReducer,
+  movie: Reducer,
 });

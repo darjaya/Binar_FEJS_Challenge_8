@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import SliderHome from "../Home/SliderHome";
-import Genres from "../Movie/Genres";
-import ListMovie from "../Movie/ListMovie";
-import SliderMovie from "../Movie/SliderMovie";
-import PopularMovie from "../../Pages/Populars";
+import SliderHome from "./SliderHome";
+import RecomendationMovie from "../Movie/Recomendation";
+import VarMovie from "../SubMovie/varMovie";
 
 function Home({ token, setToken }) {
   const navigate = useNavigate();
@@ -35,14 +33,12 @@ function Home({ token, setToken }) {
       {!token ? (
         <>
           <SliderHome />
-          <SliderMovie />
-          <PopularMovie />
+          <VarMovie />
         </>
       ) : (
         <>
-          <Genres />
-          <ListMovie />
-          <SliderMovie />
+          <RecomendationMovie />
+          <VarMovie />
         </>
       )}
 

@@ -1,41 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
-import axios from "axios";
 import { Paper, Tooltip } from "@mui/material";
 import { Col, Row } from "react-bootstrap";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllPopular, getAllTrending } from "../../Redux/Action/Action";
 
-const SliderMovie = () => {
-  const getPoster = (posterpath) => {
-    return `https://www.themoviedb.org/t/p/w440_and_h660_face${posterpath}`;
-  };
+const VarMovie = () => {
+  const dispatch = useDispatch();
 
-  const [popular, setPopular] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`https://api.themoviedb.org/3/movie/popular?api_key=8aced447ac0b69fe5ae000b735a3adef&language=en-US`)
-      .then((response) => {
-        setPopular(response.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  const [trending, setTrending] = useState([]);
+  const { populars, trendings } = useSelector((state) => state.movie);
+  // const { trendings } = useSelector((state) => state.trending);
 
   useEffect(() => {
-    axios
-      .get(`https://api.themoviedb.org/3/trending/all/day?api_key=8aced447ac0b69fe5ae000b735a3adef`)
-      .then((response) => {
-        setTrending(response.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    dispatch(getAllPopular());
+    dispatch(getAllTrending());
+  }, [dispatch]);
 
   const settings = {
     className: "center",
@@ -61,11 +42,11 @@ const SliderMovie = () => {
             </Col>
           </Row>
           <Slider {...settings}>
-            {popular.map((movie) => {
+            {populars?.results?.map((movie) => {
               return (
                 <Tooltip title={movie.title || movie.original_name}>
                   <Link to={`/details/${movie.id}${movie.title || movie.original_name}`}>
-                    <img src={getPoster(movie.poster_path)} alt="name" style={{ margin: 20, width: 130, height: 180, borderRadius: 5, cursor: "pointer" }} />
+                    <img src={`${process.env.REACT_APP_MOVIE_IMG_ORI}${movie.poster_path}`} alt="name" style={{ margin: 20, width: 130, height: 180, borderRadius: 5, cursor: "pointer" }} />
                   </Link>
                 </Tooltip>
               );
@@ -84,16 +65,15 @@ const SliderMovie = () => {
                 <p style={{ textAlign: "end", color: "#dc143c", cursor: "pointer", marginRight: 30, marginTop: 20 }}>
                   See All Movie <ArrowForwardRoundedIcon />{" "}
                 </p>
-              </Link>{" "}
+              </Link>
             </Col>
           </Row>
           <Slider {...settings}>
-            {trending.map((movie) => {
-              console.log(movie.title);
+            {trendings?.results?.map((movie) => {
               return (
                 <Tooltip size="medium" title={movie.title || movie.original_name}>
                   <Link to={`/details/${movie.id}${movie.title || movie.original_name}`}>
-                    <img src={getPoster(movie.poster_path)} alt="name" style={{ margin: 20, width: 130, height: 180, borderRadius: 5, cursor: "pointer" }} />
+                    <img src={`${process.env.REACT_APP_MOVIE_IMG_ORI}${movie.poster_path}`} alt="name" style={{ margin: 20, width: 130, height: 180, borderRadius: 5, cursor: "pointer" }} />
                   </Link>
                 </Tooltip>
               );
@@ -105,4 +85,4 @@ const SliderMovie = () => {
   );
 };
 
-export default SliderMovie;
+export default VarMovie;

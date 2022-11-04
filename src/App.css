@@ -16,9 +16,7 @@ body {
   text-align: center;
   border-radius: 0px;
   padding-bottom: 32px;
-  /* margin-left: 15px;
-  margin-right: 15px; */
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
 }
 
 .users {
@@ -39,7 +37,6 @@ body {
   box-sizing: border-box;
   justify-content: center;
   text-align: center;
-  /* background: rgba(0, 0, 0, 0); */
   position: top;
 }
 
@@ -65,28 +62,10 @@ body {
   color: #dc143c;
 }
 
-.formSearchPage {
-  display: flex;
-  justify-content: center;
-  width: 700px;
-  height: 45px;
-  margin-top: 5px;
-  border: 3px solid #dc143c;
-  border-radius: 20px;
-  font-size: 20px;
-  text-color: #dc143c;
-  text-align: center;
-  margin: auto;
-  margin-top: 25px;
-}
-
-.detilSearchPage {
-  display: flex;
-  justify-content: center;
-  width: 800px;
-  text-align: center;
-  margin: auto;
-  margin-top: 20px;
+.ratings {
+  font-size: 14px;
+  font-weight: 700 !important;
+  color: #ceecee;
 }
 
 .slider1 {
@@ -149,7 +128,7 @@ body {
   color: white;
   margin-left: 30px;
   margin-top: 50px;
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .Deskripsi {
@@ -157,7 +136,7 @@ body {
   color: white;
   margin-left: 30px;
   margin-top: 20px;
-  font-size: 15px;
+  font-size: 35px;
 }
 
 .nama {
@@ -166,30 +145,3 @@ body {
   margin-top: 5px;
   font-size: 12px;
 }
-
-.register-form {
-  display: flex;
-  align-items: center;
-  margin: 4px auto;
-  color: black;
-  background: white;
-  padding: 50px;
-  border-radius: 5px;
-  width: 50%;
-  margin-top: 100px;
-  justify-content: center;
-  text-align: center;
-}
-
-.todo-group-form {
-  align-items: center;
-  display: flex;
-  color: black;
-  background: white;
-  border-radius: 5px;
-  width: 100%;
-
-  margin-top: 50px;
-}
-
-/*  */
