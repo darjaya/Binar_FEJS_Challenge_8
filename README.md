@@ -1,4 +1,4 @@
-## KM Studi Independen Binar Academy FEJS | Challenge Chapter 7
+## KM Studi Independen Binar Academy FEJS | Challenge Chapter 8
 
 Preview [Binar Web Movie](https://binar-movie.vercel.app).
 
